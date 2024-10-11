@@ -34,10 +34,10 @@
 
 
     <div class="container mt-3">
-        <h2>Cadastro do Barbeiro</h2>
+        <h2>Cadastro do Usuário</h2>
         <form action="cadastra2.php" method="post">
           <div class="mb-3 mt-3">
-            <label for="">Nome do Barbeiro:</label>
+            <label for="">Nome do Usuário:</label>
             <input type="text" class="form-control" id="nome_de_usuario" placeholder="" name="nome_de_usuario">
           </div>
           <div class="mb-3">
