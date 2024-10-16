@@ -1,7 +1,7 @@
 
   body{
 
-   background-color: rgb(9, 8, 12); 
+   background-color: rgb(66, 66, 66); 
 
   }
  label{
@@ -11,4 +11,10 @@
  h1{
 color: white;
 
+ }
+ .container{
+   border: 1px solid rgb(37, 37, 37);
+   background-color: rgb(170, 170, 169);
+   border-radius: 5px;
+ 
  }
