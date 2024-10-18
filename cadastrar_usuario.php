@@ -1,76 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
-<body>
+<?php
+include "connection.php";
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="cadastrar_barbeiro.php">Cadastrar Barbeiro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-      </ul>
-      
-    </div>
-  </div>
-</nav>
+echo "<pre>";
+
+print_r($_POST);
 
 
-    <div class="container mt-3">
-        <h2>Cadastro do Usuário</h2>
-        <form action="cadastra2.php" method="post">
-          <div class="mb-3 mt-3">
-            <label for="">Nome do Usuário:</label>
-            <input type="text" class="form-control" id="nome_de_usuario" placeholder="" name="nome_de_usuario">
-          </div>
-          <div class="mb-3">
-            <label for="">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="" name="email">
-          </div>
-          <div class="mb-3">
-            <label for="">Data de Nascimento:</label>
-            <input type="date" class="form-control" id="data_de_nascimento" placeholder="" name="data_de_nascimento">
-          </div>
-          <div class="mb-3">
-            <label for="">Nome do Banco:</label>
-            <input type="" class="form-control" id="nome_do_banco" placeholder="" name="nome_do_banco">
-          </div>
-          <div class="mb-3">
-            <label for="">Número da Agência:</label>
-            <input type="text" class="form-control" id="numeroAgencia" placeholder="" name="numeroAgencia">
-          </div>
-          <div class="mb-3">
-            <label for="">Número da Conta:</label>
-            <input type="number" class="form-control" id="numeroConta" placeholder="" name="numeroConta">
-          </div>
-          <div class="mb-3">
-            <label for="">Chave Pix:</label>
-            <input type="text" class="form-control" id="chavePIX" placeholder="" name="chavePIX">
-          </div>
-          <div class="form-check mb-3">
-           
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-      </div>
-      
-</body>
-</html>
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$data_de_nascimento = $_POST['data_de_nascimento'];
+$id_grupo = $_POST['id_grupo'];
+
+
+$nome_do_banco = $_POST['nome_do_banco'];
+$numero_agencia = $_POST['numero_agencia'];
+$numero_conta = $_POST['numero_conta'];
+$chave_pix = $_POST['chave_pix'];
+
+echo "<br>nome_do_banco $nome_do_banco";
+echo "<br>chave_pix $chave_pix";
+echo "<br>numero_conta $numero_conta";
+echo "<br>numero_agencia $numero_agencia";
+
+// exit('<br>não inseriri');
+
+
+$sql_usuario = "INSERT INTO usuarios (nome , email, data_de_nascimento, id_grupo)
+VALUES ('$nome', '$email', '$data_de_nascimento', $id_grupo)";
+
+
+
+$sql_dados_bancarios = "INSERT INTO dados_bancarios (nome_do_banco , numero_agencia , numero_conta , chave_pix )
+VALUES ('$nome_do_banco', '$numero_agencia', '$numero_conta', $chave_pix)";
+
+
+if ($conn->query($sql_usuario) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql_usuario . "<br>" . $conn->error;
+}
+
+if ($conn->query($sql_dados_bancarios) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql_dados_bancarios . "<br>" . $conn->error;
+}
+
+$conn->close();
+
+
+
+?>
