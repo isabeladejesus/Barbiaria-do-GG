@@ -36,10 +36,18 @@
 
     <div class="container mt-3">
         <h2>Cadastro do Usuário</h2>
-        <form action="cadastra2.php" method="post">
+        <form action="cadastrar_usuario.php" method="post">
           <div class="mb-3 mt-3">
             <label for="">Nome do Usuário:</label>
-            <input type="text" class="form-control" id="nome_de_usuario" placeholder="" name="nome_de_usuario">
+            <select type="text" class="form-control" id="nome_de_usuario" placeholder="" name="id_grupo">
+              <option value="1">Admin</option>
+              <option value="2">Barbeiro</option>
+              <option value="3">Cliente</option>
+            </select>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="">Nome do Usuário:</label>
+            <input type="text" class="form-control" id="nome_de_usuario" placeholder="" name="nome_usuarios">
           </div>
           <div class="mb-3">
             <label for="">Email:</label>
@@ -55,15 +63,15 @@
           </div>
           <div class="mb-3">
             <label for="">Número da Agência:</label>
-            <input type="text" class="form-control" id="numeroAgencia" placeholder="" name="numeroAgencia">
+            <input type="text" class="form-control" id="numeroAgencia" placeholder="" name="numero_Agencia">
           </div>
           <div class="mb-3">
             <label for="">Número da Conta:</label>
-            <input type="number" class="form-control" id="numeroConta" placeholder="" name="numeroConta">
+            <input type="number" class="form-control" id="numeroConta" placeholder="" name="numero_Conta">
           </div>
           <div class="mb-3">
             <label for="">Chave Pix:</label>
-            <input type="text" class="form-control" id="chavePIX" placeholder="" name="chavePIX">
+            <input type="text" class="form-control" id="chavePIX" placeholder="" name="chave_PIX">
           </div>
           <div class="form-check mb-3">
            

@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-        <a class="nav-link" href="cadastrar_usuario.php">Cadrastras Usuário</a>
+        <a class="nav-link" href="cadastrar_usuario.html">Cadrastras Usuário</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">Link</a>

@@ -3,7 +3,7 @@
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $dbname = "Barbiaria_do_GG";
+                $dbname = "barbearia2";
     
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,7 +13,7 @@
                 }
     
              
-                $conn->close();
+                
                 ?> 
                 
             
