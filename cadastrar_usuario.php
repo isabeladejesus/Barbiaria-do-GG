@@ -11,7 +11,6 @@ $email = $_POST['email'];
 $data_de_nascimento = $_POST['data_de_nascimento'];
 $id_grupo = $_POST['id_grupo'];
 
-
 $nome_do_banco = $_POST['nome_do_banco'];
 $numero_agencia = $_POST['numero_Agencia'];
 $numero_conta = $_POST['numero_Conta'];
@@ -22,14 +21,11 @@ echo "<br>chave_pix $chave_pix";
 echo "<br>numero_conta $numero_conta";
 echo "<br>numero_agencia $numero_agencia";
 
-// exit('<br>não inseriri');
+
 
 
 $sql_usuario = "INSERT INTO usuarios (nome_usuario , email, data_de_nascimento, id_grupo)
 VALUES ('$nome', '$email', '$data_de_nascimento', $id_grupo)";
-
-
-
 
 
 

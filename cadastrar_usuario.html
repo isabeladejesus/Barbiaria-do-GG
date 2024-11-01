@@ -10,68 +10,119 @@
   </head>
 <body>
 
+  <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; position: fixed; height: 100%;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Barbearia do GG</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Agendamento.html" class="nav-link text-white">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Agendamento
+            </a>
+        </li>
+        <li>
+            <a href="agenda.html" class="nav-link text-white">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                Agenda
+            </a>
+        </li>
+        <li>
+            <a href="cadastrar_usuario.html" class="nav-link text-white">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                Cadastrar
+            </a>
+        </li>
+        <li>
+            <a href="lista_de_agendamento.html" class="nav-link text-white">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                Lista de Agendamento
+            </a>
+        </li>
+        <li>
+            <a href="serviço.html" class="nav-link text-white">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                Serviços
+            </a>
+        </li>
+    </ul>
+    <hr>
+</div>
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="cadastrar_barbeiro.php">Cadastrar Barbeiro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-      </ul>
-      
+    <div class="container-fluid">
+        <button class="btn" id="toggleSidebar">☰</button>
+        <a class="navbar-brand" href="index.php">Barbearia do GG</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>s
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+           
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
+
+<script>
+    const toggleButton = document.getElementById('toggleSidebar');
+    const sidebar = document.querySelector('.sidebar');
+
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+    });
+</script>
 
 
     <div class="container mt-3">
         <h2>Cadastro do Usuário</h2>
         <form action="cadastrar_usuario.php" method="post">
           <div class="mb-3 mt-3">
-            <label for="">Nome do Usuário:</label>
+            <label for="">Tipo:</label>
             <select type="text" class="form-control" id="nome_de_usuario" placeholder="" name="id_grupo">
-              <option value="1">Admin</option>
-              <option value="2">Barbeiro</option>
-              <option value="3">Cliente</option>
+              <option value="1">Selecione quem tus es </option>
+              <option value="2">Admin</option>
+              <option value="3">Barbeiro</option>
+              <option value="4">Cliente</option>
             </select>
           </div>
           <div class="mb-3 mt-3">
             <label for="">Nome do Usuário:</label>
-            <input type="text" class="form-control" id="nome_de_usuario" placeholder="" name="nome_usuarios">
+            <input type="text" class="form-control" id="nome_de_usuario" placeholder="Digite o nome" name="nome_usuarios">
           </div>
           <div class="mb-3">
             <label for="">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="" name="email">
+            <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" name="email">
           </div>
           <div class="mb-3">
             <label for="">Data de Nascimento:</label>
             <input type="date" class="form-control" id="data_de_nascimento" placeholder="" name="data_de_nascimento">
           </div>
-          <div class="mb-3">
-            <label for="">Nome do Banco:</label>
-            <input type="" class="form-control" id="nome_do_banco" placeholder="" name="nome_do_banco">
+          <div class="mb-3 mt-3" >
+            <label for="nome_do_banco">Nome do Banco:</label>
+            <select id="nome_do_banco" name="nome_do_banco" class="form-control">
+            <option>Selecione um Banco</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="">Número da Agência:</label>
-            <input type="text" class="form-control" id="numeroAgencia" placeholder="" name="numero_Agencia">
+            <input type="text" class="form-control" id="numeroAgencia" placeholder="Digite o número da numero agência" name="numero_Agencia">
           </div>
           <div class="mb-3">
             <label for="">Número da Conta:</label>
-            <input type="number" class="form-control" id="numeroConta" placeholder="" name="numero_Conta">
+            <input type="number" class="form-control" id="numeroConta" placeholder="Digite o número da conta" name="numero_Conta">
           </div>
           <div class="mb-3">
             <label for="">Chave Pix:</label>
-            <input type="text" class="form-control" id="chavePIX" placeholder="" name="chave_PIX">
+            <input type="text" class="form-control" id="chavePIX" placeholder="Digite a chave PIX" name="chave_PIX">
           </div>
           <div class="form-check mb-3">
            
@@ -79,6 +130,6 @@
           <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
       </div>
-      
+      <script src="bancos.js"></script>
 </body>
 </html>

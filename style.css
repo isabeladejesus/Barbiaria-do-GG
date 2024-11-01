@@ -24,3 +24,19 @@ color: white;
  
  }
  
+ .sidebar {
+     transition: margin-left 0.3s;
+ }
+ .sidebar.collapsed {
+     margin-left: -280px;
+ }
+
+ #toggleSidebar {
+     border: none; 
+     background: none; 
+     color: white;
+     font-size: 24px; 
+ }
+ #toggleSidebar:focus {
+     outline: none; 
+ }
