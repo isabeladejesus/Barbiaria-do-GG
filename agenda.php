@@ -19,11 +19,23 @@ echo "<h1>Geração de agendamentos do primeiro horário!</h1>";
 for($i = 0; $i < $qnt_de_agendamento; $i++){
 
     echo "\n Criado agendamento no horario para: " . date('H:i', $acumulado);
+    incluirAgenda($dia_da_semana,$id_usuario,$horario,$conn);
     $acumulado = $acumulado + 1800;
 }
 
 
 
+function incluirAgenda($dia_da_semana,$id_usuario,$horario,$conn){
+$sql_agenda = "INSERT INTO agenda (dia_da_semana,id_usuario,horario)"
+VALUES ($dia_da_semana,$id_usuario,'horario');
+
+if($conn->query($sql_agenda)===TRUE){
+    echo "New record created successfully";
+} else{
+    echo"Error:".$sql_agenda."<br>".$conn->error;
+}
+
+}
 
 $inicio = strtotime($_POST['horario_volta_intervalo']);
 $final = strtotime($_POST['horario_fim']);
