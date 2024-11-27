@@ -3,18 +3,19 @@ include "conexao.php";
 
 echo "<pre>";
 
-print_r($_POST);
 
 
-$nome = $_POST['nome_usuarios'];
+$grupo_usuario = ['admin', 'barbeiro', 'cliente'];
+
+$nome = $_POST['nome'];
 $email = $_POST['email'];
 $data_de_nascimento = $_POST['data_de_nascimento'];
 $id_grupo = $_POST['id_grupo'];
 
 $nome_do_banco = $_POST['nome_do_banco'];
-$numero_agencia = $_POST['numero_Agencia'];
-$numero_conta = $_POST['numero_Conta'];
-$chave_pix = $_POST['chave_PIX'];
+$numero_agencia = $_POST['numero_agencia'];
+$numero_conta = $_POST['numero_conta'];
+$chave_pix = $_POST['chave_pix'];
 
 echo "<br>nome_do_banco $nome_do_banco";
 echo "<br>chave_pix $chave_pix";
@@ -22,9 +23,10 @@ echo "<br>numero_conta $numero_conta";
 echo "<br>numero_agencia $numero_agencia";
 
 
+//print_r($_POST);
+//exit();
 
-
-$sql_usuario = "INSERT INTO usuarios (nome_usuario , email, data_de_nascimento, id_grupo)
+$sql_usuario = "INSERT INTO usuarios (nome , email, data_de_nascimento, id_grupo)
 VALUES ('$nome', '$email', '$data_de_nascimento', $id_grupo)";
 
 
@@ -36,13 +38,13 @@ if ($conn->query($sql_usuario) === TRUE) {
 }
 
 
-$sql = "SELECT * FROM usuarios order by id_usuarios desc limit 1";
+$sql = "SELECT * FROM usuarios order by id_usuario desc limit 1";
 $result = $conn->query($sql);
-$id_usuarios = $result->fetch_assoc()['id_usuarios'];
+$id_usuario = $result->fetch_assoc()['id_usuario'];
 
 
-$sql_dados_bancarios = "INSERT INTO dados_bancarios (nome_do_banco , numero_agencia , numero_conta , chave_pix, id_usuarios )
-VALUES ('$nome_do_banco', '$numero_agencia', '$numero_conta', '$chave_pix', $id_usuarios)";
+$sql_dados_bancarios = "INSERT INTO dados_bancarios (nome_do_banco , numero_agencia , numero_conta , chave_pix, id_usuario )
+VALUES ('$nome_do_banco', '$numero_agencia', '$numero_conta', '$chave_pix', $id_usuario)";
 
 
 if ($conn->query($sql_dados_bancarios) === TRUE) {

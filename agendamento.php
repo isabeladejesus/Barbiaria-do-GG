@@ -1,12 +1,12 @@
 <?php
-include "../connection.php";
+include "conexao.php";
 
 $dias_da_semana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 
 $dayofweek = date('w', strtotime($_POST['data']));
 $data_agendamento = $_POST['data'];
 
-// echo "<br><br><br><br>dia da semana agendamento: " . $dayofweek;
+;
 
 $sql = "SELECT * FROM agendas inner join usuarios on usuarios.id_usuario = agendas.id_usuario 
 where dia_da_semana = $dayofweek
@@ -21,14 +21,6 @@ and dia_da_semana = $dayofweek
 ";
 $result = $conn->query($sql);
 
-// echo "<pre>";
-// print_r([
-//     'agendamento' => $_POST,
-//     'result' => $result,
-// ]);
-
-// SELECT * FROM `agendas` inner join agendamentos on agendamentos.id_agenda = agendas.id_agenda
-// inner join usuarios on usuarios.id_usuario = agendas.id_usuario
 
 ?>
 
@@ -46,24 +38,16 @@ $result = $conn->query($sql);
 <body>
 
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container-fluid">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="lista_de_usuarios.php">Lista de usuários</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<div class="sidebar" id="sidebar">
+    <h3>Barbearia do GG</h3>
+    <ul class="nav flex-column">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="agendar.php" class="nav-link">Agendamento</a></li>
+        <li><a href="agenda.php" class="nav-link">Agenda</a></li>
+        <li><a href="cadastrar_usuario.html" class="nav-link">Cadastrar</a></li>
+        <li><a href="lista_de_agendamento.php" class="nav-link">Lista de Agendamento</a></li>
+    </ul>
+</div>
 
 <div class="container mt-3">
   <h2>Lista de usuários</h2> 

@@ -3,61 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inícial</title>
+    <title>Página Inicial - Barbearia do GG</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
-  </head>
+    
+</head>
+
 <body>
-
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">
-  <a class="navbar-brand" href="index.php">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-        <a class="nav-link" href="cadastrar_usuario.html">Cadrastras Usuário</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-      </ul>
-      
+    <div class="sidebar" id="sidebar">
+        <h3>Barbearia do GG</h3>
+        <ul class="nav flex-column">
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="agendar.php" class="nav-link">Agendamento</a></li>
+            <li><a href="agenda.php" class="nav-link">Agenda</a></li>
+            <li><a href="cadastrar_usuario.html" class="nav-link">Cadastrar</a></li>
+            <li><a href="lista_de_agendamento.php" class="nav-link">Lista de Agendamento</a></li>
+        </ul>
     </div>
-  </div>
-</nav>
 
-<div class="container-fluid p-5 bg-primary text-white text-center">
-  <h1>Barbiaria do G.G</h1>
-  <p>Resize this responsive page to see the effect!</p> 
-</div>
+    <button id="toggleSidebar" >☰</button><br>
+
+    <div class="content">
+        <h1>Bem-vindo à Barbearia do GG</h1>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleSidebar');
+        const sidebar = document.querySelector('.sidebar');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
   
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-  </div>
-</div>
-
-      
+    </script>
 </body>
 </html>
