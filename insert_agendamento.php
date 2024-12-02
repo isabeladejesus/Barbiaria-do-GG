@@ -21,9 +21,10 @@ $sql_agendamento = "
 
 
 if($conn->query($sql_agendamento))
-echo "dados incluídos";
-else
-echo "Erro ao incluir";
+    header('location: agendar.php?status=1');
 
 
 ?>
+
+
+

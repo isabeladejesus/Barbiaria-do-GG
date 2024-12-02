@@ -31,11 +31,24 @@ include "conexao.php";
 <button id="toggleSidebar">☰</button>
 
 <div class="content" id="content">
+
+
+
+
     <div class="login-container">
         <div class="login-image">
             <img src="3121d66d-7f92-4f4b-af97-dfec48c02adc.png" alt="Image">
         </div>
     <div class="login-form">
+        <?php
+        
+        if(isset($_GET['status']) && $_GET['status'] == 1)
+            echo '<div class="alert alert-success alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>Successo!</strong> O agendamento foi criado com sucesso.
+            </div>';
+
+            ?>
         <h2>Criar agendamento</h2>
         <form action="Preparando_Agendamento.php" method="post">
 
@@ -70,12 +83,12 @@ include "conexao.php";
                 </select>
                 
             </div>
-            <div class="botoes">
-              
-            <a href="index.php" class="btn btn-primary">Voltar</a>
-            <button type="submit" class="btn btn-primary">Continuar</button>
-            </div>
-        </form>
+            <div class="container mt-3">
+                        
+                        <a href="index.php" class="btn btn-outline-info">Voltar</a>
+                          <button type="submit" class="btn btn-outline-info">Continuar</button>
+                    </div>
+                </form>
     </div>
     <script>
     const toggleButton = document.getElementById('toggleSidebar');

@@ -71,11 +71,17 @@
             </div>
             
           
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button onclick="enviarAlerta()" type="submit" class="btn btn-primary">Cadastrar</button>
           </form> 
 </div>
 
 <script>
+
+    function enviarAlerta() {
+                  localStorage.setItem('exibirAlerta', 'true');
+              }
+    
+
     const toggleButton = document.getElementById('toggleSidebar');
     const sidebar = document.querySelector('.sidebar');
 

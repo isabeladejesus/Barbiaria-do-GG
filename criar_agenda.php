@@ -25,6 +25,7 @@ for($i = 0; $i < $qnt_de_agendamento; $i++){
 }
 
 function incluirAgenda($dia_da_semana, $id_usuario, $horario, $conn){
+
     $sql_agenda = "INSERT INTO agendas (dia_da_semana , id_usuario, horario)
     VALUES ($dia_da_semana, $id_usuario, '$horario')";
 
@@ -34,7 +35,7 @@ function incluirAgenda($dia_da_semana, $id_usuario, $horario, $conn){
     echo "Error: " . $sql_agenda . "<br>" . $conn->error;
     }
 }
-
+exit('erro');
 
 $inicio = strtotime($_POST['horario_volta_intervelo']);
 $final = strtotime($_POST['horario_fim']);
